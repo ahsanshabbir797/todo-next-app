@@ -50,12 +50,12 @@ export default function LoginPage() {
 	};
 
 	const guestLogin = async () => {
-		setValues({email: "Jayeshgadhok@gmail.com", password: "Jayesh@1996"});
+		setValues({email: "ahsan@gmail.com", password: "ahsan@98"});
 		try {
 			setGuestLoading(true);
 			const response = await axios.post("/api/users/login", {
-				email: "Jayeshgadhok@gmail.com",
-				password: "Jayesh@1996",
+				email: "ahsan@gmail.com",
+				password: "ahsan@98",
 			});
 			const responseData = response.data;
 			if (!responseData.error) {
@@ -130,7 +130,7 @@ export default function LoginPage() {
 									value={values.email}
 									onChange={handleChange}
 									onBlur={() => handleTouched("email")}
-									placeholder="rahul@xyz.com"
+									placeholder="user@xyz.com"
 									autoComplete="email"
 									required
 									className={`w-full rounded-md border-5 bg-transparent/5 placeholder:text-black/30 border-gray-600 py-1.5 text-black shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6 ${
@@ -170,7 +170,7 @@ export default function LoginPage() {
 									value={values.password}
 									onChange={handleChange}
 									onBlur={() => handleTouched("password")}
-									placeholder="rahul@1999"
+									placeholder="user@1999"
 									required
 									className={`w-full rounded-md border-5 bg-transparent/5 placeholder:text-black/30 border-gray-600 py-1.5 text-black shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6 ${
 										touched.password && errors.password

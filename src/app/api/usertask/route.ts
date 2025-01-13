@@ -7,8 +7,9 @@ Connect();
 export async function POST(request: NextRequest) {
 	try {
 		// Parse the request body as JSON
+		console.log("request BODY:::",request.body)
 		const reqBody = await request.json();
-		console.log(reqBody);
+		console.log("PARSED BODY:::",reqBody);
 		// Destructure the task property from the request body
 		const {task} = reqBody;
 

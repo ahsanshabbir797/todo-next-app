@@ -11,7 +11,7 @@ import {useToast} from "./ui/use-toast";
 type Props = {};
 
 const taskSchema = yup.object().shape({
-	todo: yup.string().min(5).required(" Vaild task is required"),
+	todo: yup.string().min(5).required(" Valid task is required"),
 });
 
 const AddTodo = (props: Props) => {
@@ -22,8 +22,11 @@ const AddTodo = (props: Props) => {
 	//fix tost message and data not saved in server
 	const onTaskAdded = async () => {
 		try {
+			debugger
 			setIsLoading(true);
-			const response = await axios.post("/api/usertask", values.todo);
+			const response = await axios.post("/api/usertask", {"task":values.todo,
+				"completed":false
+			});
 			console.log(response);
 			if (response.data) {
 				toast({title: "Task added successfully"});
